@@ -1,0 +1,42 @@
+Capsule 1 — Les acteurs du crédit à la consommation
+===================================================
+
+Ce dossier est prêt. Il lui manque UN fichier : la vidéo.
+
+  1. Déposer ici le fichier : j3_m1_c1_acteurs.mp4
+     (nom exact, en minuscules, sans accent — la page pointe dessus en relatif)
+
+  2. Taille maximale 24 Mo, pour passer par l'interface web de GitHub
+     (la limite affichée est de 25 Mo ; garder une marge).
+
+  3. Démarrage progressif obligatoire (atome moov en tête de fichier), sinon la
+     lecture ne démarre qu'une fois le fichier entièrement chargé et la barre de
+     progression ne fonctionne pas.
+
+     Le script de la skill video-tmk-performances fait les trois points d'un coup :
+     python scripts/generer_pages_video.py --source <dossier des mp4> --sortie <dossier>
+
+Contenu du dossier
+------------------
+  index.html                 redirection (meta refresh + JS + bouton de secours)
+  video_j3_m1_c1_acteurs.html          la page de lecture
+  j3_m1_c1_acteurs.mp4                 À DÉPOSER — durée cible 7 min
+
+Tant que le .mp4 est absent, la page affiche un message d'erreur explicite sous le
+lecteur. C'est le comportement attendu, pas un défaut.
+
+À vérifier après dépôt
+----------------------
+La page annonce une durée de 7 min et une résolution de 720p. Si la vidéo réelle
+s'en écarte, corriger les deux pastilles dans video_j3_m1_c1_acteurs.html (hero-chip et pbadge).
+
+Intégration 360Learning — pointer l'iframe sur le DOSSIER, jamais sur le fichier :
+
+  <iframe src="https://<compte>.github.io/<depot>/j3_m1_c1_acteurs/"
+          width="100%" height="900" frameborder="0"
+          allowfullscreen allow="fullscreen; picture-in-picture"></iframe>
+
+allowfullscreen est indispensable : sans lui le bouton plein écran est bloqué dans
+l'iframe, pénalisant sur des diapositives portant des tableaux.
+
+TMK Performances - N° Siret : 49841924100027 - Code NAF : 8559A
